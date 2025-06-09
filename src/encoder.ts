@@ -46,7 +46,7 @@ export class Encoder {
     if (removeNewLines) {
       text = text.replace(/[\r\n]+/g, ' ');
     } else {
-      text = text.replace(/[\r\n]+/g, '<<br>>');
+      text = text.replace(/[\r\n]+/g, '__BREAK__');
     }
 
     const tokenizer = new natural.WordTokenizer();
@@ -91,7 +91,7 @@ export class Encoder {
 
     // Replace <<br>> with actual new lines if not removing new lines
     if (!removeNewLines) {
-      trimmed = trimmed.replace(/<<br>>/g, '\n');
+      trimmed = trimmed.replace(/__BREAK__/g, '\n');
     }
 
     return trimmed;

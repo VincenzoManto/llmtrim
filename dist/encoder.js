@@ -32,7 +32,7 @@ class Encoder {
      */
     trim(text, options = {}) {
         var _a;
-        const { stemmer, language = 'english', removeSpaces = true, removeStopwords = true, removePunctuation = false } = options;
+        const { stemmer, language = 'english', removeSpaces = true, removeStopwords = true, removePunctuation = false, removeNewLines = false } = options;
         const protectedBlocks = [];
         let protectedIndex = 0;
         // Match JSON-like or code-like patterns
@@ -44,6 +44,12 @@ class Encoder {
             return placeholder;
         });
         text = text.replace(/['’]/g, '');
+        if (removeNewLines) {
+            text = text.replace(/[\r\n]+/g, ' ');
+        }
+        else {
+            text = text.replace(/[\r\n]+/g, '<<br>>');
+        }
         const tokenizer = new natural_1.default.WordTokenizer();
         let tokenized = tokenizer.tokenize(text);
         if (removePunctuation) {
@@ -79,6 +85,10 @@ class Encoder {
             const placeholder = `__PROTECTED_BLOCK_${index}__`;
             trimmed = trimmed.replace(placeholder, block);
         });
+        // Replace <<br>> with actual new lines if not removing new lines
+        if (!removeNewLines) {
+            trimmed = trimmed.replace(/<<br>>/g, '\n');
+        }
         return trimmed;
     }
 }
