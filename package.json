@@ -1,6 +1,6 @@
 {
   "name": "llmtrim",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "A library for trimming tokens in encoding and decoding in LLM applications.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -21,7 +21,7 @@
   ],
   "author": "Vincenzo Manto",
   "license": "MIT",
-    "repository": {
+  "repository": {
     "type": "git",
     "url": "https://github.com/VincenzoManto/llmtrim.git"
   },
