@@ -13,6 +13,8 @@
   },
   "keywords": [
     "token",
+    "llm",
+    "gpt",
     "trimmer",
     "encoding",
     "decoding"
