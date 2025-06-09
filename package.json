@@ -8,7 +8,8 @@
     "build": "tsc",
     "test": "jest",
     "test:compression": "jest src/encoder.spec.ts",
-    "release": "light-release"
+    "release": "light-release",
+    "publish:npm": "npm publish"
   },
   "keywords": [
     "token",
