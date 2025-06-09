@@ -1,0 +1,29 @@
+{
+  "name": "llmtrim",
+  "version": "1.0.0",
+  "description": "A library for trimming tokens in encoding and decoding in LLM applications.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "jest",
+    "test:compression": "jest src/encoder.spec.ts"
+  },
+  "keywords": [
+    "token",
+    "trimmer",
+    "encoding",
+    "decoding"
+  ],
+  "author": "Vincenzo Manto",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/jest": "^29.5.14",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.3.4",
+    "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "natural": "^8.1.0"
+  }
+}
