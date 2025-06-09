@@ -106,7 +106,7 @@ Explanation:
     readme = readme.replace(/!\[Compression\]\([^)]+\)\n?/, '');
     readme = readme.replace(/!\[Tested\]\([^)]+\)\n?/, '');
     readme = readme.replace(/!\[Tokens\]\([^)]+\)\n?/, '');
-    readme = `${badge}\n${badgeTest}\n${badgeTokens}${readme}`;
+    readme = `${badge} ${badgeTest} ${badgeTokens}\n${readme}`;
     fs.writeFileSync('README.md', readme);
 
     expect(maxCompression).toBeGreaterThan(0);
