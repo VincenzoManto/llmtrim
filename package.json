@@ -21,6 +21,14 @@
   ],
   "author": "Vincenzo Manto",
   "license": "MIT",
+    "repository": {
+    "type": "git",
+    "url": "https://github.com/VincenzoManto/llmtrim.git"
+  },
+  "bugs": {
+    "url": "https://github.com/VincenzoManto/llmtrim/issues"
+  },
+  "homepage": "https://github.com/VincenzoManto/llmtrim#readme",
   "devDependencies": {
     "@types/jest": "^29.5.14",
     "jest": "^29.7.0",
