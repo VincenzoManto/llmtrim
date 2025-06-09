@@ -26,7 +26,7 @@ export class Encoder {
    * @throws Will throw an error if an unsupported stemmer is specified.
    */
   trim(text: string, options: TrimOptions = {}): string {
-    const { stemmer, language = 'english', removeSpaces = true, removeStopwords = true, removePunctuation = false } = options;
+    const { stemmer, language = 'english', removeSpaces = true, removeStopwords = true, removePunctuation = false, removeNewLines = false } = options;
 
     const protectedBlocks: string[] = [];
     let protectedIndex = 0;
@@ -42,6 +42,12 @@ export class Encoder {
     });
 
     text = text.replace(/['’]/g, '');
+
+    if (removeNewLines) {
+      text = text.replace(/[\r\n]+/g, ' ');
+    } else {
+      text = text.replace(/[\r\n]+/g, '<<br>>');
+    }
 
     const tokenizer = new natural.WordTokenizer();
     let tokenized = tokenizer.tokenize(text);
@@ -61,11 +67,11 @@ export class Encoder {
     if (stemmer) {
       let stemmerInstance: natural.Stemmer;
       if (stemmer === 'porter') {
-        stemmerInstance = natural.PorterStemmer;
+      stemmerInstance = natural.PorterStemmer;
       } else if (stemmer === 'lancaster') {
-        stemmerInstance = natural.LancasterStemmer;
+      stemmerInstance = natural.LancasterStemmer;
       } else {
-        throw new Error('Unsupported stemmer');
+      throw new Error('Unsupported stemmer');
       }
       words = tokenized.map((word: any) => stemmerInstance.stem(word));
     }
@@ -82,6 +88,11 @@ export class Encoder {
       const placeholder = `__PROTECTED_BLOCK_${index}__`;
       trimmed = trimmed.replace(placeholder, block);
     });
+
+    // Replace <<br>> with actual new lines if not removing new lines
+    if (!removeNewLines) {
+      trimmed = trimmed.replace(/<<br>>/g, '\n');
+    }
 
     return trimmed;
   }

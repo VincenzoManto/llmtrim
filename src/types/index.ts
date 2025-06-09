@@ -4,4 +4,5 @@ export interface TrimOptions {
   removeSpaces?: boolean;
   removeStopwords?: boolean;
   removePunctuation?: boolean;
+  removeNewLines?: boolean;
 }
