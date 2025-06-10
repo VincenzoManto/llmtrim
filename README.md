@@ -8,7 +8,10 @@
 
 
 
-![npm](https://img.shields.io/npm/v/llmtrim)
+[![npm](https://img.shields.io/npm/v/llmtrim)](https://www.npmjs.com/package/llmtrim)
+[![npm](https://img.shields.io/npm/dt/llmtrim)](https://www.npmjs.com/package/llmtrim)
+![GitHub license](https://img.shields.io/github/license/VincenzoManto/llmtrim)
+
 
 # LLMTrim 
 
