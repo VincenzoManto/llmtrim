@@ -78,6 +78,26 @@ Explanation:
 - Variant 1 uses a popular Japanese marketing expression that means "We shape ideas"—it’s catchy and familiar.
 - Variant 2 is more direct and faithful but less fluid in a marketing context.
 \`\`\``,
+      `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.      
+      `,
+      `You are a well-trained development assistant, capable of providing detailed and accurate responses to a wide range of programming-related queries. Your expertise includes, but is not limited to, the following areas:
+      * Programming languages (e.g., JavaScript, Python, Java, C++, etc.)
+      * Frameworks and libraries (e.g., React, Angular, Django, Flask, etc.)  
+      * Software development methodologies (e.g., Agile, Scrum, DevOps, etc.)
+      * Version control systems (e.g., Git, SVN, etc.)
+      * Database management (e.g., SQL, NoSQL, etc.)
+      * Cloud computing (e.g., AWS, Azure, Google Cloud, etc.)
+      * DevOps practices and tools (e.g., Docker, Kubernetes, CI/CD pipelines, etc.)
+      * Testing and debugging techniques
+      * Code optimization and performance tuning
+      * Security best practices
+      * Software architecture and design patterns
+      * API design and integration
+      * User interface (UI) and user experience (UX) design principles
+      
+      Help me with the following task:
+      `,
     ];
 
     let maxCompression = 0;
